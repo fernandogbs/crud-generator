@@ -184,6 +184,16 @@ DELETE /api/crud/users/64d9f4f0a65d4e001c234567
 
 ## 🛠️ Testando a API
 
+### Caso queira popular o banco com dados diferentes
+
+_Atualize o arquivo seed.js com os dados de sua preferência_
+
+```javascript
+node seed.js
+```
+
+---
+
 > Ferramentas Recomendadas
 
 - **Postman** ou **Insomnia**: Ferramentas gráficas para realizar requisições HTTP.

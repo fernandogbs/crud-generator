@@ -2,6 +2,16 @@
 
 API em Node.js e Express que permite criar, ler, atualizar e deletar documentos em coleções dinâmicas no MongoDB. Ou seja, um Crud de Cruds
 
+
+Links da API em produção:
+
+```bash
+Vercel: https://crud-generator.vercel.app
+Render: https://crud-generator.onrender.com
+```
+
+**É possível que a requisição no `Render` demore um pouco. Pois devido ao servidor ficar inativo ele entra em modo 'Stand By' e leve um tempo para reiniciar/iniciar devidamente bem.**
+
 ---
 
 ## 🚀 Tecnologias Utilizadas

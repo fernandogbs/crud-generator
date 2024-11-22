@@ -211,7 +211,7 @@ curl -X POST http://localhost:3000/api/crud -H "Content-Type: application/json" 
 
 ---
 
-> Ler:
+## Ler:
 
 > Ler todas coleções existentes no Banco
 

@@ -191,23 +191,57 @@ DELETE /api/crud/users/64d9f4f0a65d4e001c234567
 
 ### Exemplo com curl:
 
+_Vale ressaltar que você pode criar a collection de acordo com o que preferir e com os campos que preferir. Utilizamos `users` apenas de exemplo_
+
 > Criar:
 
 ```bash
 curl -X POST http://localhost:3000/api/crud -H "Content-Type: application/json" -d '{"collection":"users", "data":{"name":"John Doe","age":30}}'
 ```
 
+---
+
 > Ler:
+
+> Ler todas coleções existentes no Banco
+
+```bash
+curl -X GET http://localhost:3000/api/collections<id>
+```
+
+> Ler todos os campos existentes em uma determinada coleção
+
+```bash
+curl -X GET http://localhost:3000/api/fields/<collection>
+```
+
+> Listar todos IDs de uma coleção (Apenas IDs)
+
+```bash
+curl -X GET http://localhost:3000/api/ids/<collection>
+```
+
+> Listar todos objetos por ID (agrupados por ID)
+
+```bash
+curl -X GET http://localhost:3000/api/documents/<collection>
+```
+
+### Exemplo na collection USERS
 
 ```bash
 curl -X GET http://localhost:3000/api/crud/users/<id>
 ```
+
+---
 
 > Atualizar:
 
 ```bash
 curl -X PUT http://localhost:3000/api/crud/users/<id> -H "Content-Type: application/json" -d '{"data":{"age":35}}'
 ```
+
+---
 
 > Deletar:
 

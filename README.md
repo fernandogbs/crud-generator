@@ -2,6 +2,7 @@
 
 API em Node.js e Express que permite criar, ler, atualizar e deletar documentos em coleções dinâmicas no MongoDB. Ou seja, um Crud de Cruds
 
+Instruções de uso da API em prod no fim no arquivo. Links abaixo.
 
 Links da API em produção:
 
@@ -60,6 +61,8 @@ _O servidor estará disponível em: http://localhost:3000_
 
 ## 📚 Rotas da API
 
+![image](https://github.com/user-attachments/assets/caee41d5-7283-4a1c-9901-669df22f2339)
+
 ### 1. Criar Documento (POST)
 
 > Endpoint:
@@ -69,6 +72,10 @@ POST /api/crud
 ```
 
 ### Corpo da Requisição:
+
+> Para executar essa ação basta criar uma nova requisição e no Body selecionar a opção `raw (rascunho)` e visualizar `JSON`
+
+![image](https://github.com/user-attachments/assets/fa2bbe6d-4b6d-4efc-a2c9-18bc8b94e6bf)
 
 ```bash
 {

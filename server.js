@@ -8,7 +8,6 @@ const createGenericModel = require("./models/GenericModel")
 
 const app = express()
 
-
 app.use(bodyParser.json())
 app.use(cors())
 
@@ -133,6 +132,20 @@ app.delete("/api/crud/:collection/:id", async (req, res) => {
     const document = await Model.findByIdAndDelete(id)
     if (!document) return res.status(404).json({ error: "Not found" })
     res.json({ message: "Deleted" })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+app.delete("/api/crud/:collection", async (req, res) => {
+  const { collection } = req.params
+  try {
+    const client = new MongoClient(process.env.MONGO_URI);
+
+    await client.connect()
+    const db = client.db() 
+    await db.collection(collection).drop()
+    res.json({ message: "Collection deleted" })
   } catch (err) {
     res.status(500).json({ error: err.message })
   }

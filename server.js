@@ -137,6 +137,17 @@ app.delete("/api/crud/:collection/:id", async (req, res) => {
   }
 })
 
+app.delete("/api/field/:collection/:field", async (req, res) => {
+  const { collection, field } = req.params
+  try {
+    const Model = createGenericModel(collection)
+    await Model.updateMany({}, { $unset: { [field]: "" } })
+    res.json({ message: `Field '${field}' deletado de todos os documentos da coleção ${collection}'` })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 app.delete("/api/crud/:collection", async (req, res) => {
   const { collection } = req.params
   try {

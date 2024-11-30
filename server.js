@@ -31,17 +31,14 @@ app.post("/api/crud", async (req, res) => {
 
 app.get("/api/collections", async (req, res) => {
   try {
-    // Cria um cliente MongoDB
     const client = new MongoClient(process.env.MONGO_URI, {
       useNewUrlParser: true,
     });
 
-    // Conecta ao banco de dados
     await client.connect()
-    const db = client.db() // Obtém o banco de dados padrão configurado no URI
-    const collections = await db.listCollections().toArray() // Lista as coleções
+    const db = client.db()
+    const collections = await db.listCollections().toArray()
 
-    // Retorna os nomes das coleções
     res.json(collections.map((collection) => collection.name))
 
     client.close()
@@ -51,7 +48,6 @@ app.get("/api/collections", async (req, res) => {
   }
 })
 
-// Endpoint para listar todos os campos de uma coleção
 app.get("/api/fields/:collection", async (req, res) => {
   const { collection } = req.params
   try {
